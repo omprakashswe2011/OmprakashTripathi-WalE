@@ -11,6 +11,8 @@
 		58E5EF6129156A5900F780CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EF6029156A5900F780CD /* ContentView.swift */; };
 		58E5EF6329156A5C00F780CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58E5EF6229156A5C00F780CD /* Assets.xcassets */; };
 		58E5EF6629156A5C00F780CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58E5EF6529156A5C00F780CD /* Preview Assets.xcassets */; };
+		58E5EF6D29156B6200F780CD /* NasaAppConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E5EF6C29156B6200F780CD /* NasaAppConfiguration.plist */; };
+		58E5EF8929156BD800F780CD /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EF7929156BD700F780CD /* ConfigurationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		58E5EF6029156A5900F780CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58E5EF6229156A5C00F780CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58E5EF6529156A5C00F780CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		58E5EF6C29156B6200F780CD /* NasaAppConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NasaAppConfiguration.plist; sourceTree = "<group>"; };
+		58E5EF7929156BD700F780CD /* ConfigurationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 		58E5EF5D29156A5900F780CD /* OmprakashTripathi-WalE */ = {
 			isa = PBXGroup;
 			children = (
+				58E5EF7829156BD700F780CD /* Config */,
+				58E5EF6C29156B6200F780CD /* NasaAppConfiguration.plist */,
 				58E5EF5E29156A5900F780CD /* OmprakashTripathi_WalEApp.swift */,
 				58E5EF6029156A5900F780CD /* ContentView.swift */,
 				58E5EF6229156A5C00F780CD /* Assets.xcassets */,
@@ -65,6 +71,14 @@
 				58E5EF6529156A5C00F780CD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		58E5EF7829156BD700F780CD /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				58E5EF7929156BD700F780CD /* ConfigurationManager.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58E5EF6629156A5C00F780CD /* Preview Assets.xcassets in Resources */,
+				58E5EF6D29156B6200F780CD /* NasaAppConfiguration.plist in Resources */,
 				58E5EF6329156A5C00F780CD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +154,7 @@
 			files = (
 				58E5EF6129156A5900F780CD /* ContentView.swift in Sources */,
 				58E5EF5F29156A5900F780CD /* OmprakashTripathi_WalEApp.swift in Sources */,
+				58E5EF8929156BD800F780CD /* ConfigurationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
