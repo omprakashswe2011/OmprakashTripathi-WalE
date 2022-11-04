@@ -13,6 +13,8 @@
 		58E5EF6629156A5C00F780CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58E5EF6529156A5C00F780CD /* Preview Assets.xcassets */; };
 		58E5EF6D29156B6200F780CD /* NasaAppConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E5EF6C29156B6200F780CD /* NasaAppConfiguration.plist */; };
 		58E5EF8929156BD800F780CD /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EF7929156BD700F780CD /* ConfigurationManager.swift */; };
+		58E5EF9829156E5400F780CD /* UserDefaults+Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EF9629156E5400F780CD /* UserDefaults+Extesion.swift */; };
+		58E5EF9929156E5400F780CD /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EF9729156E5400F780CD /* NetworkMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		58E5EF6529156A5C00F780CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		58E5EF6C29156B6200F780CD /* NasaAppConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NasaAppConfiguration.plist; sourceTree = "<group>"; };
 		58E5EF7929156BD700F780CD /* ConfigurationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
+		58E5EF9629156E5400F780CD /* UserDefaults+Extesion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extesion.swift"; sourceTree = "<group>"; };
+		58E5EF9729156E5400F780CD /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 		58E5EF5D29156A5900F780CD /* OmprakashTripathi-WalE */ = {
 			isa = PBXGroup;
 			children = (
+				58E5EF9429156E5400F780CD /* Common */,
 				58E5EF7829156BD700F780CD /* Config */,
 				58E5EF6C29156B6200F780CD /* NasaAppConfiguration.plist */,
 				58E5EF5E29156A5900F780CD /* OmprakashTripathi_WalEApp.swift */,
@@ -79,6 +84,23 @@
 				58E5EF7929156BD700F780CD /* ConfigurationManager.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		58E5EF9429156E5400F780CD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				58E5EF9529156E5400F780CD /* Utility */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		58E5EF9529156E5400F780CD /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				58E5EF9629156E5400F780CD /* UserDefaults+Extesion.swift */,
+				58E5EF9729156E5400F780CD /* NetworkMonitor.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +176,9 @@
 			files = (
 				58E5EF6129156A5900F780CD /* ContentView.swift in Sources */,
 				58E5EF5F29156A5900F780CD /* OmprakashTripathi_WalEApp.swift in Sources */,
+				58E5EF9929156E5400F780CD /* NetworkMonitor.swift in Sources */,
 				58E5EF8929156BD800F780CD /* ConfigurationManager.swift in Sources */,
+				58E5EF9829156E5400F780CD /* UserDefaults+Extesion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
