@@ -17,6 +17,9 @@
 		58E5EF9929156E5400F780CD /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EF9729156E5400F780CD /* NetworkMonitor.swift */; };
 		58E5EF9D29156F6800F780CD /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EF9B29156F6800F780CD /* ApiClient.swift */; };
 		58E5EF9E29156F6800F780CD /* ImageOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EF9C29156F6800F780CD /* ImageOfTheDay.swift */; };
+		58E5EFA32915714F00F780CD /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EFA02915714F00F780CD /* ImageViewModel.swift */; };
+		58E5EFA42915714F00F780CD /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EFA12915714F00F780CD /* ImageModel.swift */; };
+		58E5EFA52915714F00F780CD /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EFA22915714F00F780CD /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		58E5EF9729156E5400F780CD /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		58E5EF9B29156F6800F780CD /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		58E5EF9C29156F6800F780CD /* ImageOfTheDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageOfTheDay.swift; sourceTree = "<group>"; };
+		58E5EFA02915714F00F780CD /* ImageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		58E5EFA12915714F00F780CD /* ImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		58E5EFA22915714F00F780CD /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 		58E5EF5D29156A5900F780CD /* OmprakashTripathi-WalE */ = {
 			isa = PBXGroup;
 			children = (
+				58E5EF9F2915714F00F780CD /* ImageView */,
 				58E5EF9A29156F6800F780CD /* Service */,
 				58E5EF9429156E5400F780CD /* Common */,
 				58E5EF7829156BD700F780CD /* Config */,
@@ -115,6 +122,16 @@
 				58E5EF9C29156F6800F780CD /* ImageOfTheDay.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		58E5EF9F2915714F00F780CD /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				58E5EFA02915714F00F780CD /* ImageViewModel.swift */,
+				58E5EFA12915714F00F780CD /* ImageModel.swift */,
+				58E5EFA22915714F00F780CD /* ImageView.swift */,
+			);
+			path = ImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,12 +205,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58E5EFA52915714F00F780CD /* ImageView.swift in Sources */,
 				58E5EF6129156A5900F780CD /* ContentView.swift in Sources */,
 				58E5EF5F29156A5900F780CD /* OmprakashTripathi_WalEApp.swift in Sources */,
 				58E5EF9929156E5400F780CD /* NetworkMonitor.swift in Sources */,
 				58E5EF9E29156F6800F780CD /* ImageOfTheDay.swift in Sources */,
+				58E5EFA42915714F00F780CD /* ImageModel.swift in Sources */,
 				58E5EF8929156BD800F780CD /* ConfigurationManager.swift in Sources */,
 				58E5EF9829156E5400F780CD /* UserDefaults+Extesion.swift in Sources */,
+				58E5EFA32915714F00F780CD /* ImageViewModel.swift in Sources */,
 				58E5EF9D29156F6800F780CD /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
