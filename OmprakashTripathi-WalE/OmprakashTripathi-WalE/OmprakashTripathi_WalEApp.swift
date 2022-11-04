@@ -11,7 +11,10 @@ import SwiftUI
 struct OmprakashTripathi_WalEApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AstronomyPicHomeView()
+                .onAppear {
+                NetworkMonitor.shared.startMonitoring()
+            }
         }
     }
 }
