@@ -17,18 +17,21 @@ class ImageViewModel: ObservableObject {
         }
     }
     var imageModel: ImageModel
+    let mainQueue: DispatchQueue
 
-    init(urlString: String?, imageModel: ImageModel = ImageModel()) {
+    init(urlString: String?,
+         imageModel: ImageModel = ImageModel(),
+         mainQueue: DispatchQueue = .main) {
         self.imageModel = imageModel
         self.urlString = urlString
+        self.mainQueue = mainQueue
     }
     func loadImageData() {
-        imageModel.loadImageData(urlSting: urlString) { data, error in
-            if data != nil {
-                guard let data = data else { return }
-                DispatchQueue.main.async {
-                    self.data = data
-                }
+        imageModel.loadImageData(urlSting: urlString) { [weak self] data, error in
+            guard let self = self,
+                  let data = data else { return }
+            self.mainQueue.async {
+                self.data = data
             }
         }
     }

@@ -24,15 +24,14 @@ struct AstronomyPicHomeView: View {
             buildContent(dataModel)
             .alert(isPresented: $viewModel.showErrorAlert, content: {
                 Alert(
-                    title: Text(self.viewModel.errorAlertTitle),
-                    message: Text(self.viewModel.errorAlertMessage),
-                    dismissButton: .cancel(Text(self.viewModel.erroAlertOkTitle))
+                    title: Text(viewModel.errorAlertTitle),
+                    message: Text(viewModel.errorAlertMessage),
+                    dismissButton: .cancel(Text(viewModel.erroAlertOkTitle))
                 )
             })
         }
-        
     }
-    
+
     init(viewModel: AstronomyPicHomeViewModel = AstronomyPicHomeViewModel()) {
         self.viewModel = viewModel
     }
