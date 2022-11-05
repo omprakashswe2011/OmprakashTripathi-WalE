@@ -70,12 +70,83 @@
 
         this will show the white sreen and OnApppearload the data from remote or cache asynchronously 
     
-## 7 AstronomyPicHomeViewModel has all the businedd logic when to fetch the data from remote or cached according to Acceptance criteria 
+## 7. AstronomyPicHomeViewModel has all the businedd logic when to fetch the data from remote or cached according to Acceptance criteria
+        private func loadFromRemote() {
+            model.fetchPicureOfTheDay { [weak self] imageOfTheDay in
+                guard let self = self else { return }
+                if let imageOfTheDay = imageOfTheDay {
+                    self.userDefault.setCodableObject(imageOfTheDay,
+                                                      forKey: Constants.currentPicStoreInfoKey)
+                    self.updateUI(updatedState: .loaded(imageOfTheDay))
+                } else {
+                    self.updateUI(updatedState: .failed(self.error))
+                }
+            }
+        }
+
+        private func retrieveSavedData() -> NasaImageOfTheDayModel? {
+            userDefault.codableObject(dataType: NasaImageOfTheDayModel.self,
+                                      key: Constants.currentPicStoreInfoKey)
+        }
+
+        private func loadfromCache() {
+            if let retrievedCodableObject = retrieveSavedData() {
+                updateState(retrievedCodableObject: retrievedCodableObject)
+            } else {
+                state = .failed(error)
+            }
+        }
+
+        private func updateUI(updatedState: LoadingState, displayError: Bool = false) {
+            mainQueue.async { [weak self] in
+                self?.showErrorAlert = displayError
+                self?.state = updatedState
+            }
+        }
+
+        private func loadfromCacheSameDayPic() {
+            if let retrievedCodableObject = retrieveSavedData() {
+                updateUI(updatedState: .loaded(retrievedCodableObject))
+            } else {
+                updateUI(updatedState: .failed(error))
+            }
+        }
+
+        private func updateState(retrievedCodableObject: NasaImageOfTheDayModel) {
+            if isDataFetchedToday(dataSavedDate: retrievedCodableObject.date) == false {
+                updateUI(updatedState: .loaded(retrievedCodableObject), displayError: true)
+            } else {
+                updateUI(updatedState: .loaded(retrievedCodableObject))
+            }
+        }
+
+        private func isDataFetchedToday(dataSavedDate : String) -> Bool {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            guard let imageSaveDate = formatter.date(from: dataSavedDate) else { return true}
+            let isToday = Calendar.current.isDateInToday(imageSaveDate)
+            return isToday
+        }
+
+        func load() {
+            state = .loading
+            if networkMonitor.isReachable {
+                if let retrievedCodableObject = retrieveSavedData(),
+                    isDataFetchedToday(dataSavedDate: retrievedCodableObject.date) == true {
+                    loadfromCacheSameDayPic()
+                } else {
+                    loadFromRemote()
+                }
+            } else {
+                loadfromCache()
+            }
+        }
 
 
 ## Finished work: 
         Implemented displaying  the Nasa the PIC of the day image and tried to meets the accepetence criteria 
 
 ## Unit test: 
-        Added unit test cases and approxmiate 90% code coverage cove in unit test cases
+        Added unit test cases and approxmiate 90% code coverage 
+
 
