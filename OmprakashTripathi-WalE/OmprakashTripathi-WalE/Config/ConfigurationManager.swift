@@ -15,11 +15,28 @@ internal enum Constants {
 }
 
 public class ConfigurationManager {
+    private var bundle: Bundle
     private var config: [String: Any] = [:]
-    public static var shared = ConfigurationManager()
 
-    private init(configFileName: String = Constants.configFileName) {
+    init(configFileName: String = Constants.configFileName,
+                 bundle: Bundle = .main) {
+        self.bundle = bundle
         retrieveConfiguration(fileName: configFileName)
+    }
+
+    private func retrieveConfiguration(fileName: String){
+        if let infoPlistPath = bundle.url(forResource: fileName, withExtension: "plist") {
+            do {
+                let infoPlistData = try Data(contentsOf: infoPlistPath)
+                if let dict = try PropertyListSerialization.propertyList(from: infoPlistData,
+                                                                         options: [],
+                                                                         format: nil) as? [String: Any] {
+                    config = dict[Constants.appRootConfiguration] as? [String: Any] ??  [:]
+                }
+            } catch {
+                print(error)
+            }
+        }
     }
 
     func baseUrl() -> URL? {
@@ -34,20 +51,5 @@ public class ConfigurationManager {
             return apiKeySting
         }
         return ""
-    }
-
-    func retrieveConfiguration(fileName: String){
-        if let infoPlistPath = Bundle.main.url(forResource: fileName, withExtension: "plist") {
-            do {
-                let infoPlistData = try Data(contentsOf: infoPlistPath)
-                if let dict = try PropertyListSerialization.propertyList(from: infoPlistData,
-                                                                         options: [],
-                                                                         format: nil) as? [String: Any] {
-                    config = dict[Constants.appRootConfiguration] as? [String: Any] ??  [:]
-                }
-            } catch {
-                print(error)
-            }
-        }
     }
 }

@@ -6,15 +6,19 @@
 //
 
 import Network
-
-class NetworkMonitor {
+protocol NetworkMonitorable  {
+    var isReachable: Bool { get }
+    func startMonitoring()
+    func stopMonitoring()
+}
+class NetworkMonitor: NetworkMonitorable {
     static let shared = NetworkMonitor()
 
     let monitor = NWPathMonitor()
     private var status: NWPath.Status = .requiresConnection
-    var isReachable: Bool { status == .satisfied }
+    open var isReachable: Bool { status == .satisfied }
 
-    func startMonitoring() {
+    open func startMonitoring() {
         monitor.pathUpdateHandler = { [weak self] path in
             self?.status = path.status
         }
@@ -26,4 +30,5 @@ class NetworkMonitor {
     func stopMonitoring() {
         monitor.cancel()
     }
+    private init() {}
 }

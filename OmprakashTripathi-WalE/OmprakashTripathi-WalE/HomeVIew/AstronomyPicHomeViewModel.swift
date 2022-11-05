@@ -24,15 +24,18 @@ class AstronomyPicHomeViewModel: ObservableObject {
     private(set) var error = "Something went wrong"
     
     let model: AstronomyPicHomeModel
-    let userDefault: UserDefaults
-    let mainQueue: DispatchQueue
+    let userDefault: UserDefaultsManageCodableObject
+    let mainQueue: DispatchQueueType
+    let networkMonitor: NetworkMonitorable
 
     init(model: AstronomyPicHomeModel = AstronomyPicHomeModel(),
-         userDefault: UserDefaults = .standard,
-         mainQueue: DispatchQueue = .main) {
+         userDefault: UserDefaultsManageCodableObject = UserDefaults.standard,
+         mainQueue: DispatchQueueType = DispatchQueue.main,
+         networkMonitor: NetworkMonitorable = NetworkMonitor.shared) {
         self.model = model
         self.userDefault = userDefault
         self.mainQueue = mainQueue
+        self.networkMonitor = networkMonitor
     }
 
     private func loadFromRemote() {
@@ -94,7 +97,7 @@ class AstronomyPicHomeViewModel: ObservableObject {
 
     func load() {
         state = .loading
-        if NetworkMonitor.shared.isReachable {
+        if networkMonitor.isReachable {
             if let retrievedCodableObject = retrieveSavedData(),
                 isDataFetchedToday(dataSavedDate: retrievedCodableObject.date) == true {
                 loadfromCacheSameDayPic()

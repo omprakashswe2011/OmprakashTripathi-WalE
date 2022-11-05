@@ -9,7 +9,7 @@ import Foundation
 
 class AstronomyPicHomeModel {
     let apiClient: ApiClientProtocol
-    
+
     init(apiClient: ApiClientProtocol = ApiClient()) {
         self.apiClient = apiClient
     }

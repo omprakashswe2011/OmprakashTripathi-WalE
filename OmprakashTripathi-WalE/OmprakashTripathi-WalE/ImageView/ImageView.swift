@@ -10,6 +10,7 @@ import SwiftUI
 struct ImageView: View {
     @ObservedObject var imageViewModel: ImageViewModel
     @State var image:UIImage = UIImage()
+    let placeHolderImage = "noImageAvailable"
     
     init(withURL urlString: String?) {
         imageViewModel = ImageViewModel(urlString: urlString)
@@ -19,9 +20,12 @@ struct ImageView: View {
         Image(uiImage: image)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .onAppear(perform: imageViewModel.loadImageData)
+            .onAppear() {
+                image = UIImage(imageLiteralResourceName: placeHolderImage)
+                imageViewModel.loadImageData()
+            }
             .onReceive(imageViewModel.didChange) { data in
-                self.image = UIImage(data: data) ?? UIImage()
+                self.image = UIImage(data: data) ??  UIImage(imageLiteralResourceName: placeHolderImage)
             }
         }
 }
