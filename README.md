@@ -26,6 +26,11 @@
 ## Source Code of iOS OmprakashTripathi-WalE
 
         See https://github.com/omprakashswe2011/OmprakashTripathi-WalE for a detailed description 
+        
+        Xcode - Version Used            :    Xcode 13.0
+        Deployment Target               :    iOS 15.o
+        Swift Language Version          :    Swift 5
+        Thirtd-Party framework used     :    NO
   
 ======================================
 
