@@ -28,7 +28,7 @@
         See https://github.com/omprakashswe2011/OmprakashTripathi-WalE for a detailed description 
         
         Xcode - Version Used            :    Xcode 13.0
-        Deployment Target               :    iOS 15.o
+        Deployment Target               :    iOS 15.0
         Swift Language Version          :    Swift 5
         Thirtd-Party framework used     :    NO
   
