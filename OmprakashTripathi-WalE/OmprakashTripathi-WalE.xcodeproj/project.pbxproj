@@ -22,7 +22,6 @@
 		58E5EFAA291572CB00F780CD /* AstronomyPicHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EFA7291572CB00F780CD /* AstronomyPicHomeModel.swift */; };
 		58E5EFAB291572CB00F780CD /* AstronomyPicHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EFA8291572CB00F780CD /* AstronomyPicHomeView.swift */; };
 		58E5EFAC291572CB00F780CD /* AstronomyPicHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EFA9291572CB00F780CD /* AstronomyPicHomeViewModel.swift */; };
-		58E5EFAE2915784700F780CD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 58E5EFAD2915784700F780CD /* README.md */; };
 		58E5EFB6291616DC00F780CD /* OmprakashTripathi_WalETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EFB5291616DC00F780CD /* OmprakashTripathi_WalETests.swift */; };
 		58E5EFBD29161A8E00F780CD /* ConfigurationManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EFBC29161A8E00F780CD /* ConfigurationManagerTest.swift */; };
 		58E5EFBE29161B4700F780CD /* NasaAppConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E5EF6C29156B6200F780CD /* NasaAppConfiguration.plist */; };
@@ -41,6 +40,7 @@
 		58E5EFDA29165BAB00F780CD /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EFD929165BAB00F780CD /* DispatchQueue+Extension.swift */; };
 		58E5EFDC29165BE400F780CD /* MockDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EFDB29165BE400F780CD /* MockDispatchQueue.swift */; };
 		58E5EFDE29165EFF00F780CD /* MockResponsedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EFDD29165EFF00F780CD /* MockResponsedata.swift */; };
+		58E5EFE029166B5F00F780CD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 58E5EFDF29166B5F00F780CD /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +70,6 @@
 		58E5EFA7291572CB00F780CD /* AstronomyPicHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomyPicHomeModel.swift; sourceTree = "<group>"; };
 		58E5EFA8291572CB00F780CD /* AstronomyPicHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomyPicHomeView.swift; sourceTree = "<group>"; };
 		58E5EFA9291572CB00F780CD /* AstronomyPicHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomyPicHomeViewModel.swift; sourceTree = "<group>"; };
-		58E5EFAD2915784700F780CD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		58E5EFB3291616DC00F780CD /* OmprakashTripathi-WalETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OmprakashTripathi-WalETests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58E5EFB5291616DC00F780CD /* OmprakashTripathi_WalETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmprakashTripathi_WalETests.swift; sourceTree = "<group>"; };
 		58E5EFBC29161A8E00F780CD /* ConfigurationManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationManagerTest.swift; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		58E5EFD929165BAB00F780CD /* DispatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extension.swift"; sourceTree = "<group>"; };
 		58E5EFDB29165BE400F780CD /* MockDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDispatchQueue.swift; sourceTree = "<group>"; };
 		58E5EFDD29165EFF00F780CD /* MockResponsedata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponsedata.swift; sourceTree = "<group>"; };
+		58E5EFDF29166B5F00F780CD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 		58E5EF5229156A5900F780CD = {
 			isa = PBXGroup;
 			children = (
-				58E5EFAD2915784700F780CD /* README.md */,
+				58E5EFDF29166B5F00F780CD /* README.md */,
 				58E5EF5D29156A5900F780CD /* OmprakashTripathi-WalE */,
 				58E5EFB4291616DC00F780CD /* OmprakashTripathi-WalETests */,
 				58E5EF5C29156A5900F780CD /* Products */,
@@ -329,7 +329,6 @@
 			files = (
 				58E5EF6629156A5C00F780CD /* Preview Assets.xcassets in Resources */,
 				58E5EF6D29156B6200F780CD /* NasaAppConfiguration.plist in Resources */,
-				58E5EFAE2915784700F780CD /* README.md in Resources */,
 				58E5EF6329156A5C00F780CD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58E5EFE029166B5F00F780CD /* README.md in Resources */,
 				58E5EFBE29161B4700F780CD /* NasaAppConfiguration.plist in Resources */,
 				58E5EFCD2916493900F780CD /* tempImage.jpeg in Resources */,
 			);
